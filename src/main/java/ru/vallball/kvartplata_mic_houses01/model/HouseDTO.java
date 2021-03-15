@@ -16,6 +16,10 @@ public class HouseDTO {
 	
 	private List<ApartmentDTO> apartments;
 
+	public HouseDTO() {
+		
+	}
+	
 	public HouseDTO(Long id, String street, int number, int entrances, int levels, List<ApartmentDTO> apartments) {
 		this.id = id;
 		this.street = street;

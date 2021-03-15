@@ -12,6 +12,10 @@ public class ApartmentDTO {
 
 	private HouseDTO house;
 
+	public ApartmentDTO() {
+		
+	}
+	
 	public ApartmentDTO(Long id, int number, int entrance, int level, HouseDTO house) {
 		this.id = id;
 		this.number = number;

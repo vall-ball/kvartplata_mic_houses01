@@ -34,11 +34,16 @@ public class House {
 	@OneToMany(mappedBy = "house", cascade = CascadeType.ALL)
 	private List<Apartment> apartments;
 
-	public House(@NotNull String street, @NotNull int number, @NotNull int entrances, @NotNull int levels) {
+	public House() {
+		
+	}
+	
+	public House(@NotNull String street, @NotNull int number, @NotNull int entrances, @NotNull int levels, List<Apartment> apartments) {
 		this.street = street;
 		this.number = number;
 		this.entrances = entrances;
 		this.levels = levels;
+		this.apartments = apartments;
 	}
 
 	public String getStreet() {

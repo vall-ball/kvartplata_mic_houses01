@@ -31,8 +31,11 @@ public class Apartment {
 	@JoinColumn(name = "house_id", nullable = false)
 	private House house;
 
+	public Apartment() {
+		
+	}
+	
 	public Apartment(@NotNull int number, @NotNull int entrance, @NotNull int level, @NotNull House house) {
-		super();
 		this.number = number;
 		this.entrance = entrance;
 		this.level = level;

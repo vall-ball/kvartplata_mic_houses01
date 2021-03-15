@@ -12,5 +12,13 @@ public class HouseConverter {
 		}
 		return new HouseDTO(house.getId(), house.getStreet(), house.getNumber(), house.getEntrances(), house.getLevels(),  list);
 	}
+	
+	public static House convertToEntity(HouseDTO dto) {
+		List<Apartment> list = new ArrayList<>();
+		for (ApartmentDTO a : dto.getApartments()) {
+			list.add(ApartmentConverter.convertToEntity(a));
+		}
+		return new House(dto.getStreet(), dto.getNumber(), dto.getEntrances(), dto.getLevels(), list);
+	}
 
 }
