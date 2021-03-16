@@ -3,6 +3,7 @@ package ru.vallball.kvartplata_mic_houses01.model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,6 +32,9 @@ public class House {
 	@NotNull
 	private int levels;
 	
+	@NotNull
+	private int apartmentsByLevel;
+	
 	@OneToMany(mappedBy = "house", cascade = CascadeType.ALL)
 	private List<Apartment> apartments;
 
@@ -38,12 +42,12 @@ public class House {
 		
 	}
 	
-	public House(@NotNull String street, @NotNull int number, @NotNull int entrances, @NotNull int levels, List<Apartment> apartments) {
+	public House(@NotNull String street, @NotNull int number, @NotNull int entrances, @NotNull int levels, @NotNull int apartmentsByLevel) {
 		this.street = street;
 		this.number = number;
 		this.entrances = entrances;
 		this.levels = levels;
-		this.apartments = apartments;
+		this.apartmentsByLevel = apartmentsByLevel;
 	}
 
 	public String getStreet() {
@@ -88,6 +92,14 @@ public class House {
 
 	public Long getId() {
 		return id;
+	}
+
+	public int getApartmentsByLevel() {
+		return apartmentsByLevel;
+	}
+
+	public void setApartmentsByLevel(int apartmentsByLevel) {
+		this.apartmentsByLevel = apartmentsByLevel;
 	}
 	
 }

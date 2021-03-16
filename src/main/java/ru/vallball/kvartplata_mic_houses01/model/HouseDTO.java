@@ -1,7 +1,5 @@
 package ru.vallball.kvartplata_mic_houses01.model;
 
-import java.util.List;
-
 public class HouseDTO {
 
 	private Long id;
@@ -13,20 +11,20 @@ public class HouseDTO {
 	private int entrances;
 
 	private int levels;
-	
-	private List<ApartmentDTO> apartments;
 
+	private int apartmentsByLevel;
+	
 	public HouseDTO() {
 		
 	}
 	
-	public HouseDTO(Long id, String street, int number, int entrances, int levels, List<ApartmentDTO> apartments) {
+	public HouseDTO(Long id, String street, int number, int entrances, int levels, int apartmentsByLevel) {
 		this.id = id;
 		this.street = street;
 		this.number = number;
 		this.entrances = entrances;
 		this.levels = levels;
-		this.apartments = apartments;
+		this.apartmentsByLevel = apartmentsByLevel;
 	}
 
 	public Long getId() {
@@ -69,12 +67,14 @@ public class HouseDTO {
 		this.levels = levels;
 	}
 
-	public List<ApartmentDTO> getApartments() {
-		return apartments;
+	public int getApartmentsByLevel() {
+		return apartmentsByLevel;
 	}
 
-	public void setApartments(List<ApartmentDTO> apartments) {
-		this.apartments = apartments;
+	public void setApartmentsByLevel(int apartmentsByLevel) {
+		this.apartmentsByLevel = apartmentsByLevel;
 	}
 	
+	
+
 }

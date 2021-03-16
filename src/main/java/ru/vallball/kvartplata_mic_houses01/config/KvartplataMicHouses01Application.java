@@ -8,7 +8,14 @@ package ru.vallball.kvartplata_mic_houses01.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+@ComponentScan("ru.vallball.kvartplata_mic_houses01")
+@EnableJpaRepositories("ru.vallball.kvartplata_mic_houses01.dao")
+@EntityScan("ru.vallball.kvartplata_mic_houses01.model")
 @SpringBootApplication
 public class KvartplataMicHouses01Application {
 

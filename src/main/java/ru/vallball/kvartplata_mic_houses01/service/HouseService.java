@@ -13,5 +13,7 @@ public interface HouseService {
 	void delete(Long id);
 
 	House findHouseById(Long id);
+	
+	public void create(House house);
 
 }
