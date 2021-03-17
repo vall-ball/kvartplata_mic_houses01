@@ -49,6 +49,7 @@ public class HouseRestController {
 	
 	@PostMapping
 	public ResponseEntity<Object> create(@Valid @RequestBody HouseDTO houseDto) {
+		System.out.println("@PostMapping");
 		houseService.create(HouseConverter.convertToEntity(houseDto));
 		return new ResponseEntity<>("The hotel is created successfully", HttpStatus.CREATED);
 	}
